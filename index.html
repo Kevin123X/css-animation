@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: dodgerblue;
+        }
+
+        h1 {
+            position: relative;
+            color: rgba(0, 0, 0, .3);
+            font-size: 5em
+        }
+
+        h1:before {
+            content: attr(data-text);
+            position: absolute;
+            overflow: hidden;
+            max-width: 100%;
+            white-space: nowrap;
+            color: #fff;
+            animation: loading 5s infinite linear;
+        }
+
+        @keyframes loading {
+            0% {
+                max-width: 0;
+            }
+        }
+
+        @-webkit-keyframes typing {
+            from {
+                width: 0;
+            }
+        }
+
+        @-webkit-keyframes blink-caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        h2 {
+            font: bold 300% Consolas, Monaco, monospace;
+            border-right: .1em solid black;
+            width: 16.5em;
+            width: 21ch;
+            margin: 2em 1em;
+            white-space: nowrap;
+            overflow: hidden;
+            -webkit-animation: typing 7s steps(21, end) infinite,
+                blink-caret .5s step-end infinite alternate;
+        }
+
+        h3 {
+            font-size: 9rem;
+            font-family: Helvetica;
+            letter-spacing: -.3rem;
+            color: #333;
+            position: relative;
+        }
+
+        h3::after {
+            content: attr(dot-light);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FFFFFF;
+            clip-path: ellipse(100px 100px at 0% 50%);
+            animation: SpotLight 5s infinite;
+            background-size: 150%;
+            background-position: center center;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        @keyframes SpotLight {
+            0% {
+                clip-path: ellipse(100px 100px at 0% 50%);
+            }
+
+            50% {
+                clip-path: ellipse(100px 100px at 100% 50%);
+            }
+
+            100% {
+                clip-path: ellipse(100px 100px at 0% 50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 data-text="玩命加载中...">玩命加载中...</h1>
+    <h2>Welcome to GuangZhou</h2>
+    <h3 dot-light="LIZHENWEN">LIZHENWEN</h3>
+</body>
+
+</html>
